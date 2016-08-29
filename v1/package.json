@@ -1,0 +1,25 @@
+{
+  "name": "v1",
+  "version": "1.0.0",
+  "description": "version 1 of the confidence men website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jon Coughlin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-sanitizer": "^1.0.1",
+    "express-session": "^1.13.0",
+    "method-override": "^2.3.5",
+    "moment": "^2.13.0",
+    "mongoose": "^4.4.14",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0",
+    "q": "^1.4.1"
+  }
+}

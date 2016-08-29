@@ -1,0 +1,201 @@
+/*team colors*/
+/*Colors picked from: http://teamcolors.arc90.com/*/
+
+.cardinals.selected {
+/*	#97233F red
+	#000000 black
+	#FFB612 yellow
+	#A5ACAF light grey*/
+
+	background-color: #97233F;
+	color: #A5ACAF;
+}
+
+.falcons.selected {
+/*	#A71930 red
+	#000000 black
+	#A5ACAF light grey*/
+	background-color: #A71930;
+	color: #000000;
+}
+
+.ravens.selected {
+/*	#241773 purple
+	#000000 black
+	#9E7C0C gold
+	#C60C30 red?*/
+	background-color: #241773;
+	color: #9E7C0C;
+}
+
+.bills.selected {
+/*	#00338D blue
+	#C60C30 red*/
+	background-color: #00338D;
+	color: #C60C30;
+}
+
+.panthers.selected {
+/*	#0085CA blue
+	#000000 black
+	#BFC0BF light grey*/
+	background-color: #0085CA;
+	color: #000000;
+}
+
+.bears.selected {
+/*	#0B162A blue
+	#C83803 orange*/
+	background-color: #0B162A;
+	color: #C83803;
+}
+
+.bengals.selected {
+/*	#000000 black
+	#FB4F14 orange*/
+	background-color: #FB4F14;
+	color: #000000;
+}
+
+.browns.selected {
+/*	#FB4F14 orange
+	#22150C brown
+	#A5ACAF light grey*/
+	background-color: #22150C;
+	color: #FB4F14;
+}
+
+.cowboys.selected {
+/*	#002244 navy
+	#B0B7BC grey1
+	#ACC0C6 grey2
+	#A5ACAF	grey3
+	#00338D royal blue
+	#000000 black*/
+	background-color: #002244;
+	color: #ACC0C6;
+}
+
+.broncos.selected {
+/*	#002244 blue
+	#FB4F14 orange*/
+	background-color: #FB4F14;
+	color: #002244;
+}
+
+.lions.selected {
+/*	#005A8B blue
+	#B0B7BC grey
+	#000000 black*/
+	background-color: #005A8B;
+	color: #B0B7BC;
+}
+
+.packers.selected {
+/*	#203731 green
+	#FFB612 gold*/
+	background-color: #FFB612;
+	color: #203731;
+}
+
+.texans.selected {
+/*	#03202F blue
+	#A71930 red*/
+	background-color: #A71930;
+	color: #03202F;
+}
+
+.colts.selected {
+	color: #002C5F;
+	background-color: #A5ACAF;
+}
+
+.jaguars.selected {
+	background-color: #006778;
+	color: #000000;
+}
+
+.chiefs.selected {
+	background-color: #FFFFFF;
+	color: #E31837;
+}
+
+.rams.selected {
+	background-color: #B3995D;
+	color: #002244;
+}
+
+.dolphins.selected {
+	background-color: #008E97;
+	color: #F58220;
+}
+
+.vikings.selected {
+	background-color: #FFC62F;
+	color: #4F2683;
+}
+
+.patriots.selected {
+	background-color: #C60C30;
+	color: #002244;
+}
+
+.saints.selected {
+	background-color: #9F8958;
+	color: #000000;
+}
+
+.giants.selected {
+	background-color: #A71930;
+	color: #0B2265;
+}
+
+.jets.selected {
+	background-color: #FFFFFF;
+	color: #203731;
+}
+
+.raiders.selected {
+	background-color: #A5ACAF;
+	color: #000000;
+}
+
+.eagles.selected {
+	background-color: #A5ACAF;
+	color: #004953;
+}
+
+.steelers.selected {
+	background-color: #FFB612;
+	color: #000000;
+}
+
+.chargers.selected {
+	background-color: #FFB612;
+	color: #0073CF;
+}
+
+.niners.selected {
+	background-color: #B3995D;
+	color: #AA0000;
+}
+
+.seahawks.selected {
+	background-color: #69BE28;
+	color: #002244;
+}
+
+.buccaneers.selected {
+	background-color: #34302B;
+	color: #D50A0A;
+}
+
+.titans.selected {
+	background-color: #4B92DB;
+	color: #C60C30;
+}
+
+.washington.selected {
+	background-color: #FFB612;
+	color: #773141;
+}

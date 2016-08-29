@@ -1,0 +1,56 @@
+
+<% include partials/header_base %>
+<!-- Custom page sytle/scripting -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/picks.css">    
+
+<% include partials/header_end %>
+
+<!--Data to receive: games-->
+
+    <div class="ui main text container">
+        <!-- Headers -->
+        <h1 >Make Your Picks</h1>
+        <h2 >Season: <%=games[0].season %> - Week: <%=games[0].week %></h2>
+        <div class="ui divider"></div>
+        
+        <div class="ui button" id="submitPicks">SUBMIT</div>
+        
+        <!-- Picks -->
+        <div class="ui grid">
+            <div class="row">
+                <div class="ui three wide column center aligned">Home Team</div>
+                <div class="ui four wide column center aligned">Date</div>
+                <div class="ui three wide column center aligned">Away Team</div>
+                <div class="ui two wide column center aligned">Points</div>
+            </div>
+            
+            <% games.forEach(function(game){ %>
+            <% var gameDate = moment(game.kickoffDate); %>
+            <div class="row picksRow" >
+                <div class="ui three wide column horizontal left attached homeTeam teamButton <%=game.homeTeam.toLowerCase()%>">
+                    <p><%= game.homeTeam %></p></div> 
+                <div class="ui four wide column"><%=gameDate.format(picksDateFormat)  %> </div>
+                <div class="ui three wide column horizontal right attached awayTeam teamButton <%=game.awayTeam.toLowerCase()%>">
+                    <%= game.awayTeam %></div>
+                <div class="ui two wide column selection dropdown fluid">
+                    <input type="hidden" name="gender">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Points</div>
+                    <div class="menu">
+                        <% var ii = 0; %>
+                        <% while (ii < games.length) { %>
+                        <% var curPoint = 16 - ii %>
+                        <div class="item" data-value="<%=curPoint%>"><%=curPoint%></div>
+                        <% ii++; %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+    
+    <script>$('.ui.dropdown').dropdown();</script>
+    
+    <% include partials/picks %>
+<% include partials/footer %>

@@ -1,0 +1,35 @@
+<script>
+    addTeamSelection();
+    addTeamHoverEfect();
+
+    $("#submitPicks").click(function () {
+        //Find all games on page
+        var picks = $(".picksRow");
+        console.log(picks);
+        //Log pick for each game in database
+        picks.forEach(function(row) {
+            
+        });
+        
+    });
+    
+    function addTeamHoverEfect() {
+    	// add/remove formatting on hover
+    	$(".teamButton").hover(function(){
+    		$(this).toggleClass("hovering");
+    	});
+    }
+        
+    function addTeamSelection() {
+    	// 
+    	$(".homeTeam").on("click",function(){
+    		$(this).parent(".picksRow").children().removeClass("selected");
+    		$(this).addClass("selected");
+    	});
+    	$(".awayTeam").on("click",function(){
+    		$(this).parent(".picksRow").children().removeClass("selected");
+    		$(this).addClass("selected");
+    	});
+    }
+    
+</script>
