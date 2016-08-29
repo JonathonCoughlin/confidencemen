@@ -3,13 +3,29 @@ var Game = require("./models/game");
 var User = require("./models/user");
 var Pick = require("./models/pick");
 var cbsKey = require("../seedDB/cbsKey.js");
+var Q = require("q");
 
 //Connect mongoose to DB 
 mongoose.createConnection("mongodb://localhost/confidence_league");
 
-function importGames(seasonGames){
+var seasonGames = [],
+    users = [],
+    userPicksList = [],
+    season = 2015,
+    week = 1;
+
+function SetImportData(importGames,importUsers,importUserPicks,importSeason,importWeek) {
+    seasonGames = importGames;
+    users = importUsers;
+    userPicksList = importUserPicks;
+    season = importSeason;
+    week = importWeek;
+}
+
+function ImportGames(){
+    var deferred = Q.defer();
     // Remove all games
-    return Game.remove({}, function(err){
+    Game.remove({}, function(err){
         if (err){
             console.log(err);
         }
@@ -23,12 +39,15 @@ function importGames(seasonGames){
                     console.log("added a game");
                 }
             });
-        })
+        });
+        deferred.resolve();
     });
+    return deferred.promise;
 }
 
-function importUsers(users) {
-    return User.remove({}, function(err){
+function ImportUsers() {
+    var deferred = Q.defer();
+    User.remove({}, function(err){
         if (err) {
             console.log(err);
         }
@@ -41,24 +60,28 @@ function importUsers(users) {
                 } else {
                     console.log("added a user");
                 }
-            })
+            });
         });
+        deferred.resolve();
     });
+    return deferred.promise;
 }
 
-function importPicks(userPicksList,season,week) {
+function ImportPicks() {
+    var deferred = Q.defer();
     Pick.remove({}, function(err){
         if (err) {
             console.log(err);
         }
         console.log("removed picks!");
-        buildPickObjects(userPicksList,season,week);
+        BuildPickObjects(userPicksList,season,week);
+        deferred.resolve();
     });
-    return 1; //to interface with promises
+    return deferred.promise; //to interface with promises
 }
 
 //build picks from list of users and picks
-function buildPickObjects(usersPicks, season, week) {
+function BuildPickObjects(usersPicks, season, week) {
     //get games for week&season from DB
     var dbGames = [];
     Game.find({week: week, season: season}, function(err, games){
@@ -88,6 +111,7 @@ function buildPickObjects(usersPicks, season, week) {
 
 var exports = module.exports = {};
 
-exports.importGames = importGames;
-exports.importUsers = importUsers;
-exports.importPicks = importPicks;
+exports.SetImportData = SetImportData;
+exports.ImportGames = ImportGames;
+exports.ImportUsers = ImportUsers;
+exports.ImportPicks = ImportPicks;

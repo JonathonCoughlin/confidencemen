@@ -47,10 +47,8 @@ app.use(function(req, res, next){
 
 //Seed DB
 //-Use promises to proceed sequentially
-
-Q.fcall(SeedDB.importGames(LegacyData_2015Games.seasonGamesForDB)).then(
-    SeedDB.importUsers(LegacyData_2015UsersPicks.userObjects)).then(
-    SeedDB.importPicks(LegacyData_2015UsersPicks,2015,1));
+SeedDB.SetImportData(LegacyData_2015Games.seasonGamesForDB,LegacyData_2015UsersPicks.userObjects,LegacyData_2015UsersPicks,2015,1);
+SeedDB.ImportGames().then(SeedDB.ImportUsers).then(SeedDB.ImportPicks);
 
 // Set system to current week
 var currentWeek = 1,
